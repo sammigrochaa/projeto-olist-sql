@@ -1,0 +1,5 @@
+data/raw/*.csv
+data/processed/*.db
+data/processed/*.db-journal
+data/processed/*.db-wal
+data/processed/*.db-shm
