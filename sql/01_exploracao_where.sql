@@ -1,6 +1,6 @@
 -- ============================================
 -- 01_exploracao_where.sql
--- Exploração inicial com WHERE, AND e OR
+-- Exploração inicial com WHERE, AND, OR, ORDER BY e LIMIT
 -- Tabela: olist_orders_dataset
 -- ============================================
 
@@ -28,3 +28,11 @@ WHERE order_status = 'canceled' OR order_status = 'unavailable';
 SELECT * FROM olist_orders_dataset 
 WHERE order_status = 'canceled' 
 AND order_purchase_timestamp >= '2018-01-01';
+
+-- Consulta 6: os 5 pedidos cancelados mais recentes (2018 em diante)
+-- Resultado: 5 linhas (17/10, 16/10, 03/10, 01/10, 29/09 de 2018)
+SELECT * FROM olist_orders_dataset
+WHERE order_status = 'canceled' 
+AND order_purchase_timestamp >= '2018-01-01'
+ORDER BY order_purchase_timestamp DESC
+LIMIT 5;
